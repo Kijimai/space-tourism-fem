@@ -307,7 +307,7 @@ select {
 }
 
 .primary-navigation {
-  --gap: 8rem;
+  --gap: 4rem;
   --underline-gap: 2rem;
   list-style: none;
   margin: 0;
@@ -402,4 +402,20 @@ select {
 .number-indicators > [aria-pressed="true"] {
   background-color: hsl(var(--color-white));
   color: hsl(var(--color-black));
+}
+
+/* Navigation */
+
+.logo {
+}
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-header nav {
+  background-color: hsl(var(--color-white) / 0.1);
+  padding: 0 8rem;
+  filter: blur(1);
 }
