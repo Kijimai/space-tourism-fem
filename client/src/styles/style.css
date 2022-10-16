@@ -113,6 +113,28 @@ select {
   gap: var(--gap, 1rem);
 }
 
+/* Lobotomized Owl selector -- target all elements that have a sibling before it. */
+
+/* .flow > * + * {
+  margin-top: 1rem;
+  outline: 1px solid red;
+} */
+
+/* .flow > *:not(:first-child) {
+  margin-top: 1rem;
+  outline: 1px solid red;
+} */
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+  /* outline: 1px solid red; */
+}
+
+/* Sample usage of :where selector */
+/* .card :where(h1, h2, h3) {
+
+} */
+
 .container {
   padding-inline: 2em;
   margin-inline: auto;
@@ -249,4 +271,135 @@ select {
 
 .see-thru {
   background-color: hsl(var(--color-light-blue) / 0.2);
+}
+
+/* Interactive Elements */
+
+.large-button {
+  display: grid;
+  place-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  aspect-ratio: 1; /* width / height */
+  border-radius: 50%;
+  text-decoration: none;
+  position: relative;
+  padding: 0 2em;
+}
+
+.large-button::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: hsl(var(--color-white) / 0.1);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-radius: inherit;
+  transition: 0.3s ease transform;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+  transform: scale(1.5);
+}
+
+.primary-navigation {
+  --gap: 8rem;
+  --underline-gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+.underline-indicators > * {
+  position: relative;
+  padding: var(--underline-gap, 1rem) 0;
+}
+
+.underline-indicators > *:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  border-bottom: 0.2rem solid transparent;
+}
+
+.underline-indicators > *:hover:after,
+.underline-indicators > *:focus:after {
+  border-color: hsl(var(--color-white) / 0.25);
+}
+
+.underline-indicators > .active {
+  color: hsl(var(--color-white));
+}
+
+.underline-indicators button {
+  background-color: transparent;
+  border: none;
+}
+
+.underline-indicators > button[aria-pressed="true"] {
+  color: hsl(var(--color-white));
+}
+
+.underline-indicators > .active:after,
+.underline-indicators > button[aria-pressed="true"]:after {
+  border-color: hsl(var(--color-white));
+}
+
+.tab-list {
+  --gap: 2rem;
+}
+
+.underline-indicators button,
+.dot-indicators button,
+.number-indicators button {
+  cursor: pointer;
+}
+
+.dot-indicators > * {
+  background-color: hsl(var(--color-white) / 0.25);
+  border-radius: 50%;
+  aspect-ratio: 1;
+  padding: 0.5em;
+}
+
+.dot-indicators > button:hover,
+.dot-indicators > button:focus {
+  background-color: hsl(var(--color-white) / 0.5);
+}
+
+.dot-indicators > [aria-pressed="true"] {
+  background-color: hsl(var(--color-white));
+}
+
+.number-indicators > button {
+  display: block;
+  height: 80px;
+  width: 80px;
+  background-color: transparent;
+  color: hsl(var(--color-white));
+  border-radius: 50%;
+}
+
+.number-indicators > button:hover {
+  border-color: hsl(var(--color-white));
+}
+
+.number-indicators > [aria-pressed="true"] {
+  background-color: hsl(var(--color-white));
+  color: hsl(var(--color-black));
 }

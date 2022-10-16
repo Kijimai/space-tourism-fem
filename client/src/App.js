@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import Navigator from "./components/shared/Navigator.jsx"
 import Home from "./components/home/Home.jsx"
 import Test from "./components/shared/Test.jsx"

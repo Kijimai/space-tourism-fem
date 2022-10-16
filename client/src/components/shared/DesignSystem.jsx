@@ -45,11 +45,14 @@ const DesignSystem = () => {
       </div>
 
       <div id="typography" style={{ margin: "4rem 0" }}>
-        <h2>
+        <h2 className="numbered-title">
           <span>02 </span>Typography
         </h2>
         <div class="flex">
-          <div style={{ flexBasis: "100%" }}>
+          <div
+            className="flow"
+            style={{ flexBasis: "100%", "--flow-space": "3rem" }}
+          >
             <div>
               <p className="text-light-blue">
                 Heading 1 - Bellefair Regular - 150px
@@ -87,7 +90,10 @@ const DesignSystem = () => {
             </div>
           </div>
 
-          <div style={{ flexBasis: "100%" }}>
+          <div
+            className="flow"
+            style={{ flexBasis: "100%", "--flow-space": "3rem" }}
+          >
             <div>
               <p className="text-light-blue">
                 Subheading 1 - Bellefair Regular - 28px
@@ -129,6 +135,121 @@ const DesignSystem = () => {
                 Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
                 dapibus id, mattis vel, nisi.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flow" id="interactive-elements">
+        <h2 className="numbered-title">
+          <span>03</span> Interactive elements
+        </h2>
+        {/* Navigation */}
+        <div>
+          <nav>
+            <ul className="primary-navigation underline-indicators flex">
+              <li className="active">
+                <a
+                  className="fs-sans-cond fs-300 uppercase text-white letter-spacing-1"
+                  href="#"
+                >
+                  <span>01 </span>
+                  Active
+                </a>
+              </li>
+              <li>
+                <a
+                  className="fs-sans-cond fs-300 uppercase text-white letter-spacing-1"
+                  href="#"
+                >
+                  <span>02 </span>
+                  Hovered
+                </a>
+              </li>
+              <li>
+                <a
+                  className="fs-sans-cond fs-300 uppercase text-white letter-spacing-1"
+                  href="#"
+                >
+                  <span>03 </span>
+                  Idle
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="flex" style={{ justifyContent: "center" }}>
+          <div style={{ marginTop: "5rem" }}>
+            {/* Explore Button */}
+            <a
+              href="#"
+              className="bg-white large-button uppercase text-dark ff-serif fs-600"
+            >
+              Explore
+            </a>
+          </div>
+          <div className="flow" style={{ "--flow-space": "4rem" }}>
+            {/* Tabs */}
+            <div className="tab-list underline-indicators flex">
+              <button
+                aria-pressed="true"
+                className="text-light-blue uppercase letter-spacing-2"
+              >
+                Moon
+              </button>
+              <button
+                aria-pressed="false"
+                className="text-light-blue uppercase letter-spacing-2"
+              >
+                Mars
+              </button>
+              <button
+                aria-pressed="false"
+                className="text-light-blue uppercase letter-spacing-2"
+              >
+                Europa
+              </button>
+            </div>
+            {/* Dots */}
+            <div className="dot-indicators flex">
+              <button
+                aria-pressed="true"
+                className="text-light-blue uppercase letter-spacing-2"
+              >
+                <span className="sr-only">Slide Title</span>
+              </button>
+              <button
+                aria-pressed="false"
+                className="text-light-blue uppercase letter-spacing-2"
+              >
+                <span className="sr-only">Slide Title</span>
+              </button>
+              <button
+                aria-pressed="false"
+                className="text-light-blue uppercase letter-spacing-2"
+              >
+                <span className="sr-only">Slide Title</span>
+              </button>
+            </div>
+            {/* Numbers */}
+            <div
+              className="number-indicators flex"
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <button aria-pressed="true" className="ff-serif fs-500">
+                1
+              </button>
+              <button aria-pressed="false" className="ff-serif fs-500">
+                2
+              </button>
+              <button aria-pressed="false" className="ff-serif fs-500">
+                3
+              </button>
             </div>
           </div>
         </div>
