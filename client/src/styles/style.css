@@ -67,10 +67,16 @@ body {
   background-color: hsl(var(--color-black));
   line-height: 1.5;
   min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+.App {
+  min-height: 100vh;
 }
 
 /* Make images easier to work with */
-
 img,
 picture {
   max-width: 100%;
@@ -130,15 +136,33 @@ select {
   /* outline: 1px solid red; */
 }
 
-/* Sample usage of :where selector */
-/* .card :where(h1, h2, h3) {
-
-} */
-
 .container {
   padding-inline: 2em;
   margin-inline: auto;
-  max-width: 60rem;
+  max-width: 80rem;
+}
+
+.grid-container {
+  display: grid;
+  border: 5px solid green;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    column-gap: var(--container-grap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+        2rem,
+        1fr
+      );
+  }
+
+  .grid-container > *:first-child {
+    grid-column: 2;
+  }
+
+  .grid-container > *:last-child {
+    grid-column: 3;
+  }
 }
 
 /* For screen reader purposes only, used as a wrapper for hidden but identifiable elements for assistive technologies */
@@ -276,7 +300,7 @@ select {
 /* Interactive Elements */
 
 .large-button {
-  display: grid;
+  display: inline-grid;
   place-items: center;
   /* display: flex; */
   /* justify-content: center; */
