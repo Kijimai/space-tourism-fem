@@ -9,19 +9,38 @@
   --color-white: 0 0% 100%;
 
   /* Font Sizings */
-  --fs-200: 0.875rem;
-  --fs-300: 1rem;
-  --fs-400: 1.125rem;
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1rem;
   --fs-500: 1.75rem;
-  --fs-600: 2rem;
-  --fs-700: 3.5rem;
-  --fs-800: 6.25rem;
-  --fs-900: 9.375rem;
+  --fs-400: 0.9375rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
 
   /* Font Families */
   --ff-serif: "Bellefair", serif;
   --ff-sans-cond: "Barlow Condensed", sans-serif;
   --ff-sans-normal: "Barlow", sans-serif;
+}
+
+/* Tablet layout */
+@media (min-width: 35em) {
+  :root {
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-400: 1rem;
+  }
+}
+
+@media (min-width: 45em) {
+  :root {
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-400: 1.125rem;
+  }
 }
 
 /* =========================================== */
@@ -72,8 +91,13 @@ body {
   grid-template-rows: min-content 1fr;
 }
 
+#root {
+  height: 100%;
+}
+
 .App {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Make images easier to work with */
