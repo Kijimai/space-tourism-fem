@@ -7,7 +7,7 @@ const Navigator = () => {
       <div>
         <img src={logo} alt="space tourism logo" className="logo" />
       </div>
-      <nav>
+      {/* <nav>
         <ul className="primary-navigation underline-indicators flex">
           <li>
             <Link
@@ -42,7 +42,7 @@ const Navigator = () => {
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   )
 }

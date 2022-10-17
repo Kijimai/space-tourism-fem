@@ -2,7 +2,7 @@ import React from "react"
 
 const Home = () => {
   return (
-    <div className="grid-container">
+    <div className="grid-container h-100 grid-container--home">
       <div>
         <h1 className="uppercase ff-sans-cond text-light-blue fs-500 letter-spacing-1">
           So, you want to travel to

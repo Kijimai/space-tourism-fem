@@ -24,7 +24,7 @@
   --ff-sans-normal: "Barlow", sans-serif;
 }
 
-/* Tablet layout */
+/* Tablet Layout*/
 @media (min-width: 35em) {
   :root {
     --fs-800: 5rem;
@@ -34,6 +34,7 @@
   }
 }
 
+/* Small Screens Layout */
 @media (min-width: 45em) {
   :root {
     --fs-800: 6.25rem;
@@ -80,6 +81,7 @@ p {
 /* Set up the body */
 
 body {
+  position: relative;
   font-family: var(--ff-sans-normal);
   font-size: var(--fs-400);
   color: hsl(var(--color-white));
@@ -91,13 +93,12 @@ body {
   grid-template-rows: min-content 1fr;
 }
 
-#root {
-  height: 100%;
+body > #root > .App {
+  height: 100vh;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
+.h-100 {
+  height: 100%;
 }
 
 /* Make images easier to work with */
@@ -138,6 +139,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.flex.even-columns > * {
+  width: 100%;
+}
+
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
@@ -145,6 +150,10 @@ select {
 
 .d-block {
   display: block;
+}
+
+.h-100 {
+  height: 100%;
 }
 /* Lobotomized Owl selector -- target all elements that have a sibling before it. */
 
@@ -170,12 +179,21 @@ select {
 }
 
 .grid-container {
+  text-align: center;
   display: grid;
   border: 5px solid green;
+  place-items: center;
+  row-gap: 10%;
+  padding-inline: 1rem;
 }
 
-@media (min-width: 768px) {
+.grid-container * {
+  max-width: 50ch;
+}
+
+@media (min-width: 45em) {
   .grid-container {
+    text-align: left;
     column-gap: var(--container-grap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
         2rem,
@@ -189,6 +207,11 @@ select {
 
   .grid-container > *:last-child {
     grid-column: 3;
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
   }
 }
 
@@ -327,6 +350,7 @@ select {
 /* Interactive Elements */
 
 .large-button {
+  font-size: 2rem;
   display: inline-grid;
   place-items: center;
   /* display: flex; */
@@ -469,4 +493,28 @@ select {
   background-color: hsl(var(--color-white) / 0.1);
   padding: 0 8rem;
   filter: blur(1);
+}
+
+/* Home Page */
+
+body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.home {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+}
+
+@media (min-width: 35em) {
+  .home {
+    background-position: center center;
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+}
+
+@media (min-width: 45em) {
+  .home {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
 }
