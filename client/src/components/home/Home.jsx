@@ -4,9 +4,9 @@ const Home = () => {
   return (
     <div className="grid-container">
       <div>
-        <h1 className="uppercase text-light-blue fs-500 letter-spacing-1">
+        <h1 className="uppercase ff-sans-cond text-light-blue fs-500 letter-spacing-1">
           So, you want to travel to
-          <span className="fs-900 ff-serif text-white">Space</span>
+          <span className="fs-900 ff-serif text-white d-block">Space</span>
         </h1>
         <p>
           Let’s face it; if you want to go to space, you might as well genuinely
